@@ -7,13 +7,14 @@ index.html          the page (content is pre-rendered, so it works and indexes w
 style.css           theme colours (light + dark) and animations
 app.js              interactions: theme toggle, film controls, stats, integrations, tabs, booking, FAQ
 
-assets/             film (MP4 + WebM), poster and Metropolis font files
+authstack-film.*    the hero film (MP4 + WebM) and its poster
+metropolis-*.woff2  the brand font files
 netlify.toml        Netlify settings
 ```
 
 ## Deploy (GitHub → Netlify)
 
-1. Create a new GitHub repo and upload everything in this folder. **Drag the files AND the `assets` folder** into GitHub's upload page (the "choose your files" picker can't select folders, so `assets/` gets skipped).
+1. Create a new GitHub repo and upload every file in this folder (there are no subfolders, so the normal file picker works).
 2. In Netlify: **Add new site → Import an existing project → GitHub** → pick the repo.
 3. Leave **Build command** empty and set **Publish directory** to `.` (netlify.toml already does this) → **Deploy**.
 4. **Domain management → Add a domain** to connect your own domain.
