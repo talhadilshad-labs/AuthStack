@@ -425,15 +425,16 @@ const TEMPLATES = {
               <span style="display: flex; flex-direction: column; gap: 8px"><label for="as-phone" style="font-size: 13px; font-weight: 600">WhatsApp number</label><input id="as-phone" type="tel" autocomplete="tel" value="${esc(v.phone)}" data-input="phone" placeholder="03XX XXXXXXX" style="font: inherit; font-size: 15px; min-height: 48px; padding: 0 14px; border-radius: 12px; border: 1px solid var(--line-strong); background: var(--surface2); color: var(--fg); box-sizing: border-box"></span>
               <span style="display: flex; flex-direction: column; gap: 8px; grid-column: 1 / -1"><label for="as-brand" style="font-size: 13px; font-weight: 600">Your site or Instagram</label><input id="as-brand" type="text" value="${esc(v.brand)}" data-input="brand" placeholder="yourbrand.pk or @yourbrand" style="font: inherit; font-size: 15px; min-height: 48px; padding: 0 14px; border-radius: 12px; border: 1px solid var(--line-strong); background: var(--surface2); color: var(--fg); box-sizing: border-box"></span>
             </div>
+            ${(v.hasErr) ? `<span data-key="k35" role="alert" class="as-swap" style="display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(255,59,48,.35); background: rgba(255,59,48,.08); font-size: 13px; line-height: 1.5"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF3B30" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 1px"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5M12 16v.01"></path></svg>${esc(v.bookErr)}</span>` : ''}
             <div style="margin: 0 -24px -24px; padding: 18px 24px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
               <span style="font-size: 12px; color: var(--muted); max-width: 240px; line-height: 1.5">We’ll confirm on WhatsApp and send your free audit before the call.</span>
-              <button type="button" class="as-btn" data-act="confirm" style="font: inherit; font-size: 15px; font-weight: 600; min-height: 48px; padding: 0 24px; border-radius: 12px; border: none; background: var(--accent); color: #0E0E0E; cursor: pointer">Confirm booking</button>
+              <button type="button" class="as-btn" data-act="confirm" style="font: inherit; font-size: 15px; font-weight: 600; min-height: 48px; padding: 0 24px; border-radius: 12px; border: none; background: var(--accent); color: #0E0E0E; cursor: pointer">${esc(v.confirmLabel)}</button>
             </div>
           </div>
         ` : ''}
 
         ${(v.isBooked) ? `
-          <div data-key="k35" class="as-swap" style="min-height: 460px; padding: 40px 24px; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 14px">
+          <div data-key="k36" class="as-swap" style="min-height: 460px; padding: 40px 24px; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 14px">
             <span style="width: 60px; height: 60px; border-radius: 50%; background: var(--accent); color: #0E0E0E; display: flex; align-items: center; justify-content: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L19 7"></path></svg></span>
             <span style="font-size: 26px; font-weight: 600; letter-spacing: -.03em">You’re booked, ${esc(v.firstName)}.</span>
             <span style="font-size: 15px; font-weight: 600">${esc(v.summary)}</span>
@@ -454,31 +455,31 @@ const TEMPLATES = {
     <div style="margin-top: 40px; display: flex; flex-direction: column; gap: 10px">
       <div class="as-glass" style="border-radius: 14px; background: var(--surface); border: 1px solid ${esc(v.faqBorder0)}">
         <button type="button" data-act="toggle0" aria-expanded="${esc(v.open0)}" style="font: inherit; width: 100%; min-height: 60px; padding: 18px 22px; background: transparent; border: none; color: var(--fg); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; text-align: left; font-size: 16px; font-weight: 600">Do you use templates or page builders?<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; transform: ${esc(v.rot0)}"><path d="M6 9l6 6 6-6"></path></svg></button>
-        ${(v.open0) ? `<p data-key="k36" style="margin: 0; padding: 0 22px 20px; font-size: 15px; line-height: 1.6; color: var(--muted)">No. Every AuthStack site is designed and coded from scratch for a single brand. That’s what lets it load faster, look distinctly yours and do things a theme simply can’t.</p>` : ''}
+        ${(v.open0) ? `<p data-key="k37" style="margin: 0; padding: 0 22px 20px; font-size: 15px; line-height: 1.6; color: var(--muted)">No. Every AuthStack site is designed and coded from scratch for a single brand. That’s what lets it load faster, look distinctly yours and do things a theme simply can’t.</p>` : ''}
       </div>
       <div class="as-glass" style="border-radius: 14px; background: var(--surface); border: 1px solid ${esc(v.faqBorder1)}">
         <button type="button" data-act="toggle1" aria-expanded="${esc(v.open1)}" style="font: inherit; width: 100%; min-height: 60px; padding: 18px 22px; background: transparent; border: none; color: var(--fg); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; text-align: left; font-size: 16px; font-weight: 600">Can you redesign my existing site?<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; transform: ${esc(v.rot1)}"><path d="M6 9l6 6 6-6"></path></svg></button>
-        ${(v.open1) ? `<p data-key="k37" style="margin: 0; padding: 0 22px 20px; font-size: 15px; line-height: 1.6; color: var(--muted)">Yes, it’s the core of what we do. We audit what you have, keep what works and rebuild the rest properly, without losing your products, content or customers along the way.</p>` : ''}
+        ${(v.open1) ? `<p data-key="k38" style="margin: 0; padding: 0 22px 20px; font-size: 15px; line-height: 1.6; color: var(--muted)">Yes, it’s the core of what we do. We audit what you have, keep what works and rebuild the rest properly, without losing your products, content or customers along the way.</p>` : ''}
       </div>
       <div class="as-glass" style="border-radius: 14px; background: var(--surface); border: 1px solid ${esc(v.faqBorder2)}">
         <button type="button" data-act="toggle2" aria-expanded="${esc(v.open2)}" style="font: inherit; width: 100%; min-height: 60px; padding: 18px 22px; background: transparent; border: none; color: var(--fg); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; text-align: left; font-size: 16px; font-weight: 600">How long does a site take?<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; transform: ${esc(v.rot2)}"><path d="M6 9l6 6 6-6"></path></svg></button>
-        ${(v.open2) ? `<p data-key="k38" style="margin: 0; padding: 0 22px 20px; font-size: 15px; line-height: 1.6; color: var(--muted)">It depends on the number of pages and features you need. After our call you receive a clear timeline with dates for design, development and launch, and we hold ourselves to it.</p>` : ''}
+        ${(v.open2) ? `<p data-key="k39" style="margin: 0; padding: 0 22px 20px; font-size: 15px; line-height: 1.6; color: var(--muted)">It depends on the number of pages and features you need. After our call you receive a clear timeline with dates for design, development and launch, and we hold ourselves to it.</p>` : ''}
       </div>
       <div class="as-glass" style="border-radius: 14px; background: var(--surface); border: 1px solid ${esc(v.faqBorder3)}">
         <button type="button" data-act="toggle3" aria-expanded="${esc(v.open3)}" style="font: inherit; width: 100%; min-height: 60px; padding: 18px 22px; background: transparent; border: none; color: var(--fg); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; text-align: left; font-size: 16px; font-weight: 600">What’s in the free audit?<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; transform: ${esc(v.rot3)}"><path d="M6 9l6 6 6-6"></path></svg></button>
-        ${(v.open3) ? `<p data-key="k39" style="margin: 0; padding: 0 22px 20px; font-size: 15px; line-height: 1.6; color: var(--muted)">We review your site and social presence across five areas: speed, design, mobile experience, checkout and tracking. You receive a short, prioritised list of what to fix first and why it matters.</p>` : ''}
+        ${(v.open3) ? `<p data-key="k40" style="margin: 0; padding: 0 22px 20px; font-size: 15px; line-height: 1.6; color: var(--muted)">We review your site and social presence across five areas: speed, design, mobile experience, checkout and tracking. You receive a short, prioritised list of what to fix first and why it matters.</p>` : ''}
       </div>
       <div class="as-glass" style="border-radius: 14px; background: var(--surface); border: 1px solid ${esc(v.faqBorder4)}">
         <button type="button" data-act="toggle4" aria-expanded="${esc(v.open4)}" style="font: inherit; width: 100%; min-height: 60px; padding: 18px 22px; background: transparent; border: none; color: var(--fg); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; text-align: left; font-size: 16px; font-weight: 600">Do you handle domain, hosting and payments?<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; transform: ${esc(v.rot4)}"><path d="M6 9l6 6 6-6"></path></svg></button>
-        ${(v.open4) ? `<p data-key="k40" style="margin: 0; padding: 0 22px 20px; font-size: 15px; line-height: 1.6; color: var(--muted)">Yes. Launch is part of every project. We set up your domain, hosting, payment gateway and analytics, and take the site live for you.</p>` : ''}
+        ${(v.open4) ? `<p data-key="k41" style="margin: 0; padding: 0 22px 20px; font-size: 15px; line-height: 1.6; color: var(--muted)">Yes. Launch is part of every project. We set up your domain, hosting, payment gateway and analytics, and take the site live for you.</p>` : ''}
       </div>
       <div class="as-glass" style="border-radius: 14px; background: var(--surface); border: 1px solid ${esc(v.faqBorder5)}">
         <button type="button" data-act="toggle5" aria-expanded="${esc(v.open5)}" style="font: inherit; width: 100%; min-height: 60px; padding: 18px 22px; background: transparent; border: none; color: var(--fg); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; text-align: left; font-size: 16px; font-weight: 600">What happens after launch?<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; transform: ${esc(v.rot5)}"><path d="M6 9l6 6 6-6"></path></svg></button>
-        ${(v.open5) ? `<p data-key="k41" style="margin: 0; padding: 0 22px 20px; font-size: 15px; line-height: 1.6; color: var(--muted)">We stay on call to fix issues, train your team to update products and content, and support you as your brand grows.</p>` : ''}
+        ${(v.open5) ? `<p data-key="k42" style="margin: 0; padding: 0 22px 20px; font-size: 15px; line-height: 1.6; color: var(--muted)">We stay on call to fix issues, train your team to update products and content, and support you as your brand grows.</p>` : ''}
       </div>
       <div class="as-glass" style="border-radius: 14px; background: var(--surface); border: 1px solid ${esc(v.faqBorder6)}">
         <button type="button" data-act="toggle6" aria-expanded="${esc(v.open6)}" style="font: inherit; width: 100%; min-height: 60px; padding: 18px 22px; background: transparent; border: none; color: var(--fg); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; text-align: left; font-size: 16px; font-weight: 600">How much does a website cost?<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; transform: ${esc(v.rot6)}"><path d="M6 9l6 6 6-6"></path></svg></button>
-        ${(v.open6) ? `<p data-key="k42" style="margin: 0; padding: 0 22px 20px; font-size: 15px; line-height: 1.6; color: var(--muted)">It depends on the pages and features you need. After the free call you get a clear quote in writing, before any work starts.</p>` : ''}
+        ${(v.open6) ? `<p data-key="k43" style="margin: 0; padding: 0 22px 20px; font-size: 15px; line-height: 1.6; color: var(--muted)">It depends on the pages and features you need. After the free call you get a clear quote in writing, before any work starts.</p>` : ''}
       </div>
     </div>
   `
@@ -489,7 +490,7 @@ const esc = (x) => String(x).replace(/&/g, '&amp;').replace(/</g, '&lt;').replac
 const reduceMotion = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
 
 const state = {
-  uc: 0, open: 0, day: 0, slot: 1, call: 0, name: '', phone: '', brand: '', booked: false, step: 1, sending: false,
+  uc: 0, open: 0, day: 0, slot: 1, call: 0, name: '', phone: '', brand: '', booked: false, step: 1, sending: false, error: '',
   conn: 0, connLock: false, statP: 1, vidPaused: false, vidMuted: true, svc: 0, svcLock: false, ucLock: false
 };
 // which re-renderable region depends on which piece of state
@@ -499,7 +500,7 @@ const DEPS = {
   stats: ['statP'],
   conn: ['conn', 'connLock'],
   who: ['uc', 'ucLock'],
-  book: ['day', 'slot', 'call', 'step', 'booked', 'sending'],
+  book: ['day', 'slot', 'call', 'step', 'booked', 'sending', 'error'],
   faq: ['open']
 };
 
@@ -577,6 +578,8 @@ function computeV(s) {
   v.name = s.name; v.phone = s.phone; v.brand = s.brand;
   v.firstName = s.name.trim().split(' ')[0] || 'there';
   v.isBooked = s.booked; v.notBooked = !s.booked;
+  v.hasErr = !!s.error; v.bookErr = s.error;
+  v.confirmLabel = s.sending ? 'Sending…' : 'Confirm booking';
   v.isStep1 = !s.booked && s.step === 1; v.isStep2 = !s.booked && s.step === 2;
   v.s1Bg = s.step === 1 ? fg : ACC; v.s1Fg = s.step === 1 ? bg : '#0E0E0E'; v.s1Color = fg;
   v.s2Bg = s.step === 2 ? fg : 'transparent'; v.s2Fg = s.step === 2 ? bg : muted; v.s2Color = s.step === 2 ? fg : muted;
@@ -620,19 +623,39 @@ function set(patch) {
 const film = () => document.getElementById('film');
 
 // ---------- booking (Netlify Forms) ----------
+// Netlify reads the hidden <form name="booking"> in index.html at deploy time,
+// then accepts these POSTs and lists them under Forms → booking.
+function cleanPhone(raw) { return String(raw || '').replace(/[\s\-().]/g, ''); }
+function validPhone(raw) { return /^\+?\d{10,13}$/.test(cleanPhone(raw)); }
+function fail(fieldId, message) {
+  set({ error: message });
+  const el = document.getElementById(fieldId);
+  if (el) { el.setAttribute('aria-invalid', 'true'); el.focus(); }
+}
 function submitBooking() {
   if (state.sending) return;
-  const missing = !state.name.trim() ? 'as-name' : (!state.phone.trim() ? 'as-phone' : null);
-  if (missing) {
-    const el = document.getElementById(missing);
-    if (el) { el.setAttribute('aria-invalid', 'true'); el.focus(); }
-    return;
-  }
-  set({ sending: true });
-  const body = new URLSearchParams({ 'form-name': 'booking', name: state.name, phone: state.phone, brand: state.brand, slot: computeV(state).summary });
-  fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body.toString() })
-    .then((r) => { if (!r.ok) throw new Error(String(r.status)); set({ sending: false, booked: true }); })
-    .catch(() => { set({ sending: false }); window.alert('Sorry, your booking didn’t go through. Please try again, or message us on WhatsApp.'); });
+  if (!state.name.trim()) return fail('as-name', 'Please add your name so we know who we’re speaking to.');
+  if (!validPhone(state.phone)) return fail('as-phone', 'Please enter a valid WhatsApp number, for example 0300 1234567.');
+  set({ sending: true, error: '' });
+  const d = DAY_LIST[state.day];
+  const data = {
+    'form-name': 'booking',
+    'bot-field': '',
+    name: state.name.trim(),
+    phone: cleanPhone(state.phone),
+    brand: state.brand.trim(),
+    date: d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'),
+    time: SLOTS[state.slot] + ' PKT',
+    call: CALLS[state.call],
+    slot: computeV(state).summary
+  };
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(data).toString()
+  })
+    .then((r) => { if (!r.ok) throw new Error('HTTP ' + r.status); set({ sending: false, booked: true }); })
+    .catch(() => set({ sending: false, error: 'We couldn’t send your booking. Please check your connection and try again, or message us on WhatsApp.' }));
 }
 
 // ---------- actions ----------
@@ -656,10 +679,10 @@ const ACTIONS = {
   'days.pick': (i) => set({ day: i }),
   'slots.pick': (i) => set({ slot: i }),
   'callTypes.pick': (i) => set({ call: i }),
-  goStep1: () => set({ step: 1 }),
+  goStep1: () => set({ step: 1, error: '' }),
   goStep2: () => set({ step: 2 }),
   confirm: submitBooking,
-  reset: () => set({ booked: false, step: 1 })
+  reset: () => set({ booked: false, step: 1, error: '' })
 };
 for (let i = 0; i < 6; i++) ACTIONS['pickSvc' + i] = () => set({ svc: i, svcLock: true });
 for (let i = 0; i < 7; i++) ACTIONS['toggle' + i] = () => set({ open: state.open === i ? -1 : i });
@@ -694,6 +717,7 @@ document.addEventListener('input', (e) => {
   if (!key) return;
   state[key] = e.target.value; // stored without re-rendering, so typing never loses focus
   e.target.removeAttribute('aria-invalid');
+  if (state.error) set({ error: '' });
 });
 
 // ---------- start ----------
