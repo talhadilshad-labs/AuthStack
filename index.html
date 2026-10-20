@@ -599,7 +599,7 @@
 
 </div>
 <!-- Netlify Forms reads this hidden form at deploy time; app.js posts bookings to it. -->
-<form name="booking" data-netlify="true" netlify-honeypot="bot-field" hidden>
+<form name="booking" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
   <input name="name"><input name="phone"><input name="brand"><input name="date"><input name="time"><input name="call"><input name="slot"><input name="bot-field">
 </form>
 </body>
